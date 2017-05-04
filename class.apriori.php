@@ -89,7 +89,11 @@ class Apriori {
        $num = count($db);  
        for($i=0; $i<$num; $i++) 
           {
-             $tmp  = explode($this->delimiter, $db[$i]);
+             if(!is_array($db[$i])){
+                $tmp  = explode($this->delimiter, $db[$i]);
+             }else{
+                 $tmp = $db[$i];
+             }
              $num1 = count($tmp);
              $x    = array();
              for($j=0; $j<$num1; $j++) 
